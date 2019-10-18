@@ -14,11 +14,7 @@
 
 ## Introduction
 
-Rent Book API is an API that allow the users to read books and genre information data from database. Rent Book API also allow (registered ) users to create, update and delete a book and its genre information into/from database.
-
-There're some features included in the API which allow users to programmatically sort the books (based on released date, title, availability or genre), rent or returning a book, search a book and fetch a certain number of books from database.
-
-This documentation outlines the rent book API functionality.
+Point of Sales API is an API that helps users to run their trading business. There're some features included in the API. User can handle management stock of product and store the order transaction
 
 ### Built With
 
@@ -94,7 +90,7 @@ Each response will be returned with one of the following HTTP status codes:
 5. Turn on Web Server and MySQL, (Also can be done with third-party tools like XAMPP, WAMP, etc)
 6. Setup the database. [instruction here](#setup-database)
 7. Open **Postman** desktop application or Chrome web extension (Install **Postman** if you haven't yet)
-8. Choose HTTP Method and enter the request URL.(i.e. localhost:3000/books)
+8. Choose HTTP Method and enter the request URL.(i.e. localhost:3000/product)
 9. Check all **Endpoints** [here](#endpoints)
 
 ## Setup .env file
