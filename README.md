@@ -129,7 +129,7 @@ You can import file `database.sql` to **phpmyadmin**.
   - **More Options** :
     - **Search** : add params **`?search=`**
     - **Sort By** : add params **`?sortby=name/category/updated` and `?orderby=asc/desc`**
-    - **Pagination**: add params **`?page=`** to get page of product and **`?perpage=`** to show the max product, if not add the params, default value for **page** is **1** and **perpage** is **10**
+    - **Pagination**: add params **`?page=`** to get page of product and **`?perpage=`** to show the max product on one page, if not add the params, default value for **page** is **1** and **perpage** is **10**
 
   - **Response** :
     ```
@@ -331,7 +331,7 @@ You can import file `database.sql` to **phpmyadmin**.
 * **Read All Category**
   - **Request** : **`GET /category`**
   - **More Options** : 
-    - **Pagination** : add params **`?page=`** to get page of product and **`?perpage=`** to show the max product, if not add the params default value for **page** is **1** and **perpage** is **10**
+    - **Pagination** : add params **`?page=`** to get page of product and **`?perpage=`** to show the max product on one page, if not add the params default value for **page** is **1** and **perpage** is **10**
   - **Response** :
     ```
     {
@@ -408,7 +408,7 @@ You can import file `database.sql` to **phpmyadmin**.
 * **Get All Order**
   - **Request** : **`GET /order`**
   - **More Options** : 
-    - **Pagination** : add params **`?page=`** to get page of product and **`?perpage=`** to show the max product, if not add the params default value for **page** is **1** and **perpage** is **10**
+    - **Pagination** : add params **`?page=`** to get page of product and **`?perpage=`** to show the max product on one page, if not add the params default value for **page** is **1** and **perpage** is **10**
   - **Response** :
     ```
     {
