@@ -22,7 +22,7 @@ This documentation outlines the rent book API functionality.
 
 ### Built With
 
-[![Node.js](https://img.shields.io/badge/Node.js-v.10.16.2-green.svg?style=rounded-square)](https://nodejs.org/) [![Express.js](https://img.shields.io/badge/Express.js-4.x-orange.svg?style=rounded-square)](https://expressjs.com/en/starter/installing.html) [![MySQL](https://img.shields.io/badge/mysql-v2.17.1-blue)](https://www.npmjs.com/package/mysql) [![body-parser](https://img.shields.io/badge/bodyparser-v1.19.0-red)](https://www.npmjs.com/package/body-parser) [![morgan](https://img.shields.io/badge/morgan-v1.9.1-nila)](https://www.npmjs.com/package/body-parser) [![dotenv](https://img.shields.io/badge/dotenv-v1.9.1-black)](https://www.npmjs.com/package/body-parser) [![cors](https://img.shields.io/badge/cors-v2.8.5-purple)](https://www.npmjs.com/package/body-parser)
+[![Node.js](https://img.shields.io/badge/Node.js-v.10.16.2-green.svg?style=rounded-square)](https://nodejs.org/) [![Express.js](https://img.shields.io/badge/Express.js-4.x-orange.svg?style=rounded-square)](https://expressjs.com/en/starter/installing.html) [![MySQL](https://img.shields.io/badge/mysql-v2.17.1-blue)](https://www.npmjs.com/package/mysql) [![body-parser](https://img.shields.io/badge/body--parser-v1.19.0-red)](https://www.npmjs.com/package/body-parser) [![morgan](https://img.shields.io/badge/morgan-v1.9.1-success)](https://www.npmjs.com/package/body-parser) [![dotenv](https://img.shields.io/badge/dotenv-v1.9.1-black)](https://www.npmjs.com/package/body-parser) [![cors](https://img.shields.io/badge/cors-v2.8.5-blueviolet)](https://www.npmjs.com/package/body-parser)
 
 ## Getting Started
 
