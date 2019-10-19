@@ -102,6 +102,7 @@ DB_USER = 'username'
 DB_PASSWORD = 'password'
 DB_DATABASE = 'database'
 PORT = 3000
+SECRET_KEY = 270400
 ```
 
 ## Setup Database
@@ -122,6 +123,49 @@ You can import file `database.sql` to **phpmyadmin**.
         "github": "github.com/irsyaadbp"
     }
   ```
+
+#### **User**
+* **Register user**
+  - **Request** : **`POST /user/register`**
+  <br/>
+  ```
+  {
+        "username": "irsyaadbp",
+        "password": "12345678",
+        "user_role": "administrator"
+  }
+  ```
+  - **Response** : 
+  ```
+  {
+        "status": 200,
+        "result": "User created successfully"
+  }
+  ```
+* **Login User**
+  - **Request** : **`POST /user/login`**
+  ```
+  {
+        "username": "irsyaadbp",
+        "password": "12345678"
+  }
+  ```
+  - **Response** : 
+  ```
+  {
+        "status": 200,
+        "result": {
+            "user_id": 3,
+            "username": "irsyaadbp",
+            "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MywiaWF0IjoxNTcxNDQ2MDk3LCJleHAiOjE1NzE0NDk2OTd9.lUn3yz0j0Em5GR3JhLvNyEgkUe2FbgWYUZB1XV4BXk8"
+        }
+  }
+  ```
+
+**IMPORTANT!** All endpoint except **Login** and **Register** must have **header** :
+
+- **Content-Type** : **`application/json`**
+- **x-access-token**: **`token`**
 
 #### **CRUD Product Endpoint**
 * **Get All Product**
