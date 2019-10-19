@@ -106,7 +106,7 @@ SECRET_KEY = 270400
 ```
 
 ## Setup Database
-You can import file `database.sql` to **phpmyadmin**.
+You can import file **`database.sql`** to **phpmyadmin**.
 
 ## Endpoints
 
