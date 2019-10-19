@@ -52,7 +52,7 @@ exports.getProducts = (req, page) => {
     return new Promise((resolve, reject) => {
         getMaxPage(page, query.keyword, sql).then(maxPage => {
             const infoPage = {
-                page: page.page,
+                currentPage: page.page,
                 totalProduct: maxPage.totalProduct,
                 maxPage: maxPage.maxPage
             };

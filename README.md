@@ -188,7 +188,7 @@ You can import file **`database.sql`** to **phpmyadmin**.
                 {
                     "id": 1,
                     "product_name": "Nasi Kucing",
-                    "description": "Cuma nasi dengan porsi seekor kucing, bukan nasi dengan daging kucing",
+                    "description": "Nasi kucing is an Indonesian rice dish that originated from Yogyakarta, Semarang, and Surakarta but has since spread. It consists of a small portion of rice with toppings, usually sambal, dried fish, and tempeh, wrapped in banana leaves.",
                     "image": "https://upload.wikimedia.org/wikipedia/commons/9/9d/Nasi_kucing_langgi.jpg",
                     "category": "Food",
                     "price": 1500,
@@ -198,86 +198,86 @@ You can import file **`database.sql`** to **phpmyadmin**.
                 },
                 {
                     "id": 2,
-                    "product_name": "Nasi Gajah",
-                    "description": "Cuma nasi dengan porsi seekor Gajah, bukan nasi dengan daging Gajah",
-                    "image": "https://upload.wikimedia.org/wikipedia/commons/9/9d/Nasi_kucing_langgi.jpg",
+                    "product_name": "Bakso",
+                    "description": "Bakso or baso is an Indonesian meatball, or a meat paste made from beef surimi. Its texture is similar to the Chinese beef ball, fish ball, or pork ball. The word bakso may refer to a single meatball or the complete dish of meatball soup.",
+                    "image": "https://upload.wikimedia.org/wikipedia/commons/2/28/Bakso_mi_bihun.jpg",
                     "category": "Food",
-                    "price": 1500,
+                    "price": 10000,
                     "quantity": 23,
                     "created_at": "2019-10-18T05:41:02.000Z",
                     "updated_at": "2019-10-18T09:35:43.000Z"
                 },
                 {
                     "id": 3,
-                    "product_name": "Nasi Hiu",
-                    "description": "Cuma nasi dengan porsi seekor Hiu, bukan nasi dengan daging Hiu",
-                    "image": "https://upload.wikimedia.org/wikipedia/commons/9/9d/Nasi_kucing_langgi.jpg",
+                    "product_name": "Rendang",
+                    "description": "Rendang is an Indonesian spicy red meat dish originating from the Minangkabau people of Indonesia. It has spread across Indonesia to the cuisines of neighbouring Southeast Asian countries.",
+                    "image": "https://rasamalaysia.com/wp-content/uploads/2018/04/beef-rendang-thumb.jpg",
                     "category": "Food",
-                    "price": 1500,
+                    "price": 6000,
                     "quantity": 23,
                     "created_at": "2019-10-18T05:41:14.000Z",
                     "updated_at": "2019-10-18T09:35:43.000Z"
                 },
                 {
                     "id": 4,
-                    "product_name": "Nasi Manusia",
-                    "description": "Cuma nasi dengan porsi seekor Manusia, bukan nasi dengan daging Manusia",
-                    "image": "https://upload.wikimedia.org/wikipedia/commons/9/9d/Nasi_kucing_langgi.jpg",
+                    "product_name": "Sayur Asem",
+                    "description": "Sayur asem or sayur asam is a Southeast Asian vegetable soup originating from Indonesia. It is a popular Indonesian dish, consisting of vegetables in tamarind soup.",
+                    "image": "https://cdn.idntimes.com/content-images/post/20181008/7e14931dd8f60e46c707f79748f54ce1_600x400.jpg",
                     "category": "Food",
-                    "price": 1500,
+                    "price": 8000,
                     "quantity": 25,
                     "created_at": "2019-10-18T05:41:50.000Z",
                     "updated_at": "2019-10-18T09:35:43.000Z"
                 },
                 {
                     "id": 5,
-                    "product_name": "Nasi Ayam",
-                    "description": "Kalo yang ini nasi dengan ayam, bukan nasi dengan porsi seekor ayam",
-                    "image": "https://upload.wikimedia.org/wikipedia/commons/9/9d/Nasi_kucing_langgi.jpg",
+                    "product_name": "Spaghetti",
+                    "description": "Spaghetti is a long, thin, solid, cylindrical pasta. Spaghettoni is a thicker form of spaghetti, while capellini is a very thin spaghetti. It is a staple food of traditional Italian cuisine. Like other pasta, spaghetti is made of milled wheat and water and sometimes enriched with vitamins and minerals.",
+                    "image": "https://www.inspiredtaste.net/wp-content/uploads/2019/03/Spaghetti-with-Meat-Sauce-Recipe-1-1200.jpg",
                     "category": "Food",
-                    "price": 15000,
+                    "price": 10000,
                     "quantity": 25,
                     "created_at": "2019-10-18T05:42:26.000Z",
                     "updated_at": "2019-10-18T09:35:43.000Z"
                 },
                 {
                     "id": 6,
-                    "product_name": "Sayur asem",
-                    "description": "Sayur yang rasanya asem",
-                    "image": "https://cdns.klimg.com/merdeka.com/i/w/news/2018/04/25/968568/670x335/5-cara-masak-sayur-asem-yang-enak-segar-dan-mudah-ala-sunda-betawi-serta-jawa-rev-1.jpg",
+                    "product_name": "Bulgogi",
+                    "description": "Bulgogi, literally "fire meat", is a gui made of thin, marinated slices of beef or pork grilled on a barbecue or on a stove-top griddle. It is also often stir-fried in a pan in home cooking. Sirloin, rib eye or brisket are frequently used cuts of beef for the dish.",
+                    "image": "https://assets.bonappetit.com/photos/57acd741f1c801a1038bc801/16:9/w_1200,c_limit/basic-bulgogi.jpg",
                     "category": "Food",
-                    "price": 15000,
+                    "price": 10000,
                     "quantity": 25,
                     "created_at": "2019-10-18T05:44:32.000Z",
                     "updated_at": "2019-10-18T09:35:43.000Z"
                 },
                 {
                     "id": 7,
-                    "product_name": "Es Cendol",
-                    "description": "Cuma es cendol biasa, gak ada yang spesial",
-                    "image": "https://awsimages.detik.net.id/community/media/visual/2019/02/21/32e9715c-976c-4939-ac14-6833baa85138.jpeg?w=700&q=90",
+                    "product_name": "Es Campur",
+                    "description": "In Indonesia, es campur is sold from humble traveling trolley to restaurants. For Indonesian Muslims, es campur and kolak are popular treats during Ramadan for iftar, often sold prior to breaking the fast. It is quite similar to es teler and es doger although with different content.",
+                    "image": "https://foodizz.id/blog/wp-content/uploads/2019/05/Es-Campur-Tips-dan-Trik-dalam-Membuat-Es-Campur.png",
                     "category": "Drink",
-                    "price": 3500,
+                    "price": 5000,
                     "quantity": 25,
                     "created_at": "2019-10-18T05:45:51.000Z",
                     "updated_at": "2019-10-18T07:09:40.000Z"
                 },
                 {
                     "id": 8,
-                    "product_name": "Es Dawet",
-                    "description": "Sama aja kayak es cendol, cuma beda nama aja",
-                    "image": "https://awsimages.detik.net.id/community/media/visual/2019/02/21/32e9715c-976c-4939-ac14-6833baa85138.jpeg?w=700&q=90",
+                    "product_name": "Cendol",
+                    "description": "Cendol is an iced sweet dessert that contains droplets of green rice flour jelly, coconut milk and palm sugar syrup. It is commonly found in Southeast Asia and is popular in Indonesia, Malaysia, Brunei, Cambodia, East Timor, Vietnam, Thailand, Singapore, and Burma.",
+                    "image": "https://cdn.sindonews.net/dyn/620/content/2018/06/05/185/1311667/es-cendol-bikin-buka-puasa-lebih-nikmat-iyQ.jpg",
                     "category": "Drink",
-                    "price": 1500,
+                    "price": 2500,
                     "quantity": 25,
                     "created_at": "2019-10-18T05:46:35.000Z",
                     "updated_at": "2019-10-18T07:09:40.000Z"
                 },
                 {
                     "id": 9,
-                    "product_name": "Es Teh",
-                    "description": "Es yang dikasih teh",
-                    "image": "https://cdn2.tstatic.net/travel/foto/bank/images/es-teh_20171221_075643.jpg",
+                    "product_name": "Ice Cream Sandwich",
+                    "description": "An ice cream sandwich is a frozen dessert consisting of ice cream between two biscuits, wafers, or cookies.",
+                    "image": "https://www.eatingonadime.com/wp-content/uploads/2018/05/ice-cream-sandwiches-square.jpg",
                     "category": "Drink",
                     "price": 2000,
                     "quantity": 25,
@@ -286,9 +286,9 @@ You can import file **`database.sql`** to **phpmyadmin**.
                 },
                 {
                     "id": 10,
-                    "product_name": "Es Jeruk",
-                    "description": "Perasan jeruk yang dikasih es",
-                    "image": "http://basoafung.com/wp-content/uploads/2017/01/es-jeruk.jpg",
+                    "product_name": "Ice Tea",
+                    "description": "Iced tea is a form of cold tea. Though usually served in a glass with ice, it can refer to any tea that has been chilled or cooled. It may be sweetened with sugar, syrup and/or apple slices.",
+                    "image": "https://i0.wp.com/member.rumah-kopi.com/wp-content/uploads/2019/05/teh.jpg?fit=700%2C700&ssl=1",
                     "category": "Drink",
                     "price": 2000,
                     "quantity": 25,
@@ -310,7 +310,7 @@ You can import file **`database.sql`** to **phpmyadmin**.
             {
                 "id": 1,
                 "product_name": "Nasi Kucing",
-                "description": "Cuma nasi dengan porsi seekor kucing, bukan nasi dengan daging kucing",
+                "description": "Nasi kucing is an Indonesian rice dish that originated from Yogyakarta, Semarang, and Surakarta but has since spread. It consists of a small portion of rice with toppings, usually sambal, dried fish, and tempeh, wrapped in banana leaves.",
                 "image": "https://upload.wikimedia.org/wikipedia/commons/9/9d/Nasi_kucing_langgi.jpg",
                 "category": "Food",
                 "price": 1500,
@@ -325,14 +325,15 @@ You can import file **`database.sql`** to **phpmyadmin**.
   - **Request** : **POST /product**
     ```
     {
-        "prod_name": "Fried Chicken",
-        "prod_desc": "Fried Chicken",
-        "prod_image": "http://image.com/fried-chicken.jpg",
+        "prod_name": "Nasi Kucing",
+        "prod_desc": "Nasi kucing is an Indonesian rice dish that originated from Yogyakarta, Semarang, and Surakarta but has since spread. It consists of a small portion of rice with toppings, usually sambal, dried fish, and tempeh, wrapped in banana leaves.",
+        "prod_image": "https://upload.wikimedia.org/wikipedia/commons/9/9d/Nasi_kucing_langgi.jpg",
         "category_id": 1,
         "price": 10000,
         "quantity": 6
     }
     ```
+    **IMPORTANT!** If category_id null, category_id have default value 1, cause 1 is Uncategorized if you use my setting database in file **`database.sql`**
   - **Response** :
     ```
     {
@@ -344,13 +345,12 @@ You can import file **`database.sql`** to **phpmyadmin**.
   - **Request** : **`PUT /product/:prod_id`**
     ```
     {
-        "prod_id": 11,
-        "prod_name": "Es Cendol",
-        "prod_desc": "Cuma es cendol biasa, gak ada yang spesial",
-        "prod_image": "https://awsimages.detik.net.id/community/media/visual/2019/02/21/32e9715c-976c-4939-ac14-6833baa85138.jpeg?w=700&q=90",
-        "category_id": 2,
-        "price": 3500,
-        "quantity": 25
+        "prod_name": "Nasi Kucing",
+        "prod_desc": "Nasi kucing is an Indonesian rice dish that originated from Yogyakarta, Semarang, and Surakarta but has since spread. It consists of a small portion of rice with toppings, usually sambal, dried fish, and tempeh, wrapped in banana leaves.",
+        "prod_image": "https://upload.wikimedia.org/wikipedia/commons/9/9d/Nasi_kucing_langgi.jpg",
+        "category_id": 1,
+        "price": 10000,
+        "quantity": 6
     }
     ```
   - **Response** :

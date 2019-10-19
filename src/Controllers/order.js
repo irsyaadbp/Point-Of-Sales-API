@@ -20,9 +20,10 @@ exports.newOrder = (req, res) => {
     if(req.body.detail_order == null) return response.error(res, "Detail order can't be empty");
     if(!Array.isArray(req.body.detail_order)) return response.error(res, "Detail order must be array of object");
     
-    const orderProdId = req.body.detail_order.map(item => item.prod_id);
     const detailOrder = req.body.detail_order;
+    const orderProdId = detailOrder.map(item => item.prod_id);
 
+    // Logic lama
     getProductById(req, orderProdId).then(result => {
         if (result.length == orderProdId.length) {
             let statusQty = [];

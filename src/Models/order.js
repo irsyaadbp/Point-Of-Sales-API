@@ -11,7 +11,7 @@ exports.getOrders = (req, page) => {
     return new Promise((resolve, reject) => {
         getMaxPage(page, null, sql).then(maxPage => {
             const infoPage = {
-                page: page.page,
+                currentPage: page.page,
                 totalProduct: maxPage.totalProduct,
                 maxPage: maxPage.maxPage
             };

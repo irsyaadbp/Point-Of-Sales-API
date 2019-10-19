@@ -27,7 +27,7 @@ exports.newProduct = (req, res) => {
     if(req.body.prod_name == null) return response.error(res, "Product name can't be empty");
     if(req.body.prod_desc == null) return response.error(res, "Product description can't be empty");
     if(req.body.prod_image == null) return response.error(res, "Product image can't be empty");
-    if(req.body.category_id == null) return response.error(res, "Category id can't be empty");
+    if(req.body.category_id == null) req.body.category_id = 1;
     if(req.body.price == null) return response.error(res, "Price can't be empty");
     if(req.body.quantity == null) return response.error(res, "Quantity can't be empty");
 
