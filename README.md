@@ -127,7 +127,6 @@ You can import file `database.sql` to **phpmyadmin**.
 #### **User**
 * **Register user**
   - **Request** : **`POST /user/register`**
-  <br/>
   ```
   {
         "username": "irsyaadbp",
