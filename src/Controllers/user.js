@@ -8,7 +8,6 @@ const model = require('../Models/user'),
     {
         pagination
     } = require('../Models/page');
-    // salt = bcrypt.ge;
 
 exports.registerUser = (req, res) => {
     if (req.body.username == null) return response.error(res, "Username can't be empty");
@@ -87,4 +86,10 @@ exports.getUserById = (req, res) => {
     model.getUserById(req).then(result => {
         response.success(res, result);
     }).catch(err => response.error(res, err));
+}
+
+exports.deleteUser = (req, res) => {
+    model.deleteUser(req).then(result => {
+        response.success(res, "Deleted user successfully");
+    }).catch(err => result.error(res, err));
 }

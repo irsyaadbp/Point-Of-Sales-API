@@ -198,6 +198,16 @@ You can import file **`database.sql`** to **phpmyadmin**.
         "result": "Updated user successfully"
     }
     ```
+* **Delete User By Id**
+  - **Request**:  **`DELETE /user/:user_id`**
+  - **Response**: 
+    ```
+    {
+        "status": 200,
+        "result": "Deleted user successfully"
+    }
+    ```
+
 
 #### **CRUD Product Endpoint**
 * **Get All Product**
