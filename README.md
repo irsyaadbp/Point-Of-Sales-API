@@ -102,7 +102,7 @@ DB_USER = 'username'
 DB_PASSWORD = 'password'
 DB_DATABASE = 'database'
 PORT = 3000
-SECRET_KEY = 270400
+SECRET_KEY = '270400'
 ```
 
 ## Setup Database
@@ -110,61 +110,94 @@ You can import file **`database.sql`** to **phpmyadmin**.
 
 ## Endpoints
 
+**IMPORTANT!** All endpoint except **Login** and **Register** must have **header** :
+
+- **Content-Type** : **`application/json`**
+- **x-access-token**: **`token`**
+
 #### **Homepage**
 
 - **Request** : **`GET /`**
 - **Response** :
 
-  ```
+    ```
     {
         "message": "Welcome to Point Of Sales RESTful API, You can read the documentation at README.md",
         "author": "Irsyaad Budi Prasetianto",
         "email": "irsyaad.budip@gmail.com",
         "github": "github.com/irsyaadbp"
     }
-  ```
+    ```
 
 #### **User**
 * **Register user**
   - **Request** : **`POST /user/register`**
-  ```
-  {
+    ```
+    {
         "username": "irsyaadbp",
         "password": "12345678",
         "user_role": "administrator"
-  }
-  ```
+    }
+    ```
   - **Response** : 
-  ```
-  {
+    ```
+    {
         "status": 200,
         "result": "User created successfully"
-  }
-  ```
+    }
+    ```
 * **Login User**
   - **Request** : **`POST /user/login`**
-  ```
-  {
+    ```
+    {
         "username": "irsyaadbp",
         "password": "12345678"
-  }
-  ```
+    }
+    ```
   - **Response** : 
-  ```
-  {
+    ```
+    {
         "status": 200,
         "result": {
             "user_id": 3,
             "username": "irsyaadbp",
             "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MywiaWF0IjoxNTcxNDQ2MDk3LCJleHAiOjE1NzE0NDk2OTd9.lUn3yz0j0Em5GR3JhLvNyEgkUe2FbgWYUZB1XV4BXk8"
         }
-  }
-  ```
-
-**IMPORTANT!** All endpoint except **Login** and **Register** must have **header** :
-
-- **Content-Type** : **`application/json`**
-- **x-access-token**: **`token`**
+    }
+    ```
+* **Get User By Id**
+  - **Request**:  **`PUT /user/:user_id`**
+  - **Response**: 
+    ```
+    {
+        "status": 200,
+        "result": [
+            {
+                "id": 3,
+                "username": "adminakjdha",
+                "role": "Manajer",
+                "created_at": "2019-10-20T02:21:27.000Z",
+                "updated_at": "2019-10-20T04:40:43.000Z"
+            }
+        ]
+    }
+    ```
+* **Update User By Id**
+  - **Request**:  **`PUT /user/:user_id`**
+    ```
+    {
+        "username": "irsyaad101",
+        "password": "testPassword1",
+        "user_role": "Manager"
+    }
+    ```
+  - **Response**: 
+    ```
+    {
+        "status": 200,
+        "result": "Updated user successfully"
+    }
+    ```
 
 #### **CRUD Product Endpoint**
 * **Get All Product**

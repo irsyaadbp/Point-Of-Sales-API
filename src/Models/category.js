@@ -6,15 +6,15 @@ const {getMaxPage} = require('./page');
 exports.getCategories = (req, page) => {
     const sql = 'SELECT * FROM tb_categories';
     return new Promise((resolve, reject) => {
-        getMaxPage(page, null, sql).then(maxPage => {
+        getMaxPage(page, null, "tb_categories").then(maxPage => {
             const infoPage = {
                 currentPage: page.page,
-                totalProduct: maxPage.totalProduct,
+                totalAllCategories: maxPage.totalProduct,
                 maxPage: maxPage.maxPage
             };
 
-            conn.query(`${sql} LIMIT ? OFFSET ?`, [page.limit, page.offset], (err, result) => {
-                if (!err) resolve( {infoPage, result});
+            conn.query(`${sql} LIMIT ? OFFSET ?`, [page.limit, page.offset], (err, data) => {
+                if (!err) resolve( {infoPage, data});
                 else reject(err);
             });
         }).catch(err => {
