@@ -16,7 +16,7 @@ exports.getProducts = (req, res) => {
 
 exports.getProductById = (req, res) => {
     model.getProductById(req).then(result => {
-        if (result.length == 0) response.error(res, "Product id not found :(");
+        if (result.length == 0) response.error(res, "Product id not found");
         else response.success(res, result);
     }).catch(err => {
         response.error(res, err);
@@ -47,7 +47,7 @@ exports.newProduct = (req, res) => {
                 response.error(res, 'Quantity cannot be below 0');
             }
         } else {
-            response.error(res, 'Category Id Not Found :(');
+            response.error(res, 'Category Id Not Found');
         }
     });
 }
@@ -78,11 +78,11 @@ exports.updateProduct = (req, res) => {
                         response.error(res, 'Quantity cannot be below 0');
                     }
                 } else {
-                    response.error(res, 'Category Id Not Found :(');
+                    response.error(res, 'Category Id Not Found');
                 }
             });
         } else {
-            response.error(res, 'Product Id Not Found :(');
+            response.error(res, 'Product Id Not Found');
         }
     }).catch(err => {
         response.error(res, err);
@@ -98,7 +98,7 @@ exports.deleteProduct = (req, res) => {
                 response.error(res, err);
             });
         } else {
-            response.error(res, 'Product Id Not Found :(');
+            response.error(res, 'Product Id Not Found');
         }
     });
 }

@@ -1,7 +1,7 @@
 'use-strict';
 
 const conn = require('../Configs/conn');
-const { getMaxPage } = require('./page');
+const { getMaxPage} = require('./page');
 
 const sortBy = (req, sql) => {
     const sortBy = req.query.sortby;
@@ -50,10 +50,10 @@ exports.getProducts = (req, page) => {
     sql = sortBy(req, query.sql);
 
     return new Promise((resolve, reject) => {
-        getMaxPage(page, query.keyword, sql).then(maxPage => {
+        getMaxPage(page, query.keyword, "tb_products").then(maxPage => {
             const infoPage = {
                 currentPage: page.page,
-                totalProduct: maxPage.totalProduct,
+                totalAllProduct: maxPage.totalProduct,
                 maxPage: maxPage.maxPage
             };
 

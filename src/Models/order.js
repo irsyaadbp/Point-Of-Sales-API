@@ -1,18 +1,16 @@
 'use-strict';
 
 const conn = require('../Configs/conn'),
-    {
-        getMaxPage
-    } = require('./page');
+    { getMaxPage } = require('./page');
 
 exports.getOrders = (req, page) => {
     let sql = 'SELECT * FROM tb_orders';
 
     return new Promise((resolve, reject) => {
-        getMaxPage(page, null, sql).then(maxPage => {
+        getMaxPage(page, null, "tb_orders").then(maxPage => {
             const infoPage = {
                 currentPage: page.page,
-                totalProduct: maxPage.totalProduct,
+                totalAllOrder: maxPage.totalProduct,
                 maxPage: maxPage.maxPage
             };
 
@@ -26,6 +24,26 @@ exports.getOrders = (req, page) => {
         });
     });
 }
+
+// exports.getOrderById = req => {
+//     return new Promise((resolve, reject) => {
+//         conn.query('SELECT admin_id, order_id, total_price, status, cancel_reason FROM tb_orders WHERE order_id = ?',
+//          [req.params.order_id], (err, result) => {
+//             if(!err) resolve(result);
+//             else reject(err);
+//         });
+//     });
+// }
+
+// exports.getDetailOrderById = req => {
+//     return new Promise((resolve, reject) => {
+//         conn.query('SELECT prod_id, quantity, sub_total FROM tb_orders_detail WHERE order_id = ?',
+//          [req.params.order_id], (err, result) => {
+//              if(!err) resolve(result);
+//              else reject(err);
+//         });
+//     });
+// }
 
 exports.newOrder = (req, order) => {
     return new Promise((resolve, reject) => {
@@ -78,28 +96,13 @@ exports.getOrderById = req => {
     return new Promise((resolve, reject) => {
         conn.query(`SELECT * FROM tb_orders WHERE order_id = ?`, [orderId],
             (err, result) => {
-                if (!err) {
-                    this.getDetailOrder(orderId).then(resultDetail => {
-                        const data = result.map(item => ({
-                            admin_id: item.admin_id,
-                            order_id: item.order_id,
-                            detail_order: resultDetail,
-                            total_price: item.total_price,
-                            status: item.status,
-                            cancel_reason: item.cancel_reason,
-                            created_at: item.created_at,
-                            update_at: item.update_at
-                        }));
-                        resolve(data)
-                    }).catch(err => {
-                        reject(err);
-                    })
-                }
+                if (!err) resolve(result);
+                else reject(err);
             })
     });
 }
 
-exports.getDetailOrder = orderId => {
+exports.getDetailOrderById = orderId => {
     return new Promise((resolve, reject) => {
         conn.query(`SELECT prod_id, quantity, sub_total FROM tb_orders_detail WHERE order_id = ?`, [orderId],
             (err, result) => {

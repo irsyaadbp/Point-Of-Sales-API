@@ -14,19 +14,20 @@ exports.pagination = req => {
     };
 }
 
-exports.getMaxPage = (page, keyword, sql) => {
+exports.getMaxPage = (page, keyword, table) => {
     return new Promise((resolve, reject) => {
-        conn.query(sql, ['%' + keyword + '%'], (err, result) => {
+        if(keyword != null) table += " WHERE name LIKE ?"
+        conn.query(`SELECT COUNT(*) as total FROM ${table}`, ['%' + keyword + '%'], (err, result) => {
             if (!err) {
-                const maxPage = Math.ceil(result.length / page.limit);
+                const maxPage = Math.ceil(result[0].total / page.limit);
 
                 if(maxPage >= page.page){
                     resolve({
-                        totalProduct: result.length,
+                        totalProduct: result[0].total,
                         maxPage
                     });
                 }else{
-                    reject(`Im sorry only until page ${maxPage} :(`);
+                    reject(`Im sorry only until page ${maxPage}`);
                 }
             }
             else reject(err);

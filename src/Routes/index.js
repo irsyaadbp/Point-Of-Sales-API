@@ -5,22 +5,9 @@ const express = require('express'),
     category = require('./category'),
     order = require('./order'),
     user = require('./user'),
-    response = require('../Helpers/response'),
-    jwt = require('jsonwebtoken')
-    secretKey = process.env.SECRET_KEY || 270400;
+    {validateUser} = require('../Helpers/middleware');
 
 const Router = express.Router();
-
-const validateUser = (req, res, next) => {
-    jwt.verify(req.headers['x-access-token'], secretKey, (err, decoded) => {
-      if (err) {
-        response.error(res, err.message);
-      }else{
-        req.body.user_id = decoded.id;
-        next();
-      }
-    });
-  }
 
 Router.get('/', (req, res) => {
     res.json({

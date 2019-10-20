@@ -43,7 +43,7 @@ exports.updateCategory = (req, res) => {
                 response.error(res, err);
             });
         }else{
-            response.error(res, "Category id not found :(");
+            response.error(res, "Category id not found");
         }
     }).catch(err => {
         response.error(res, err);
@@ -59,7 +59,7 @@ exports.deleteCategory = (req, res) => {
                 response.error(res, err);
             });
         }else{
-            response.error(res, "Category id not found :(");
+            response.error(res, "Category id not found");
         }
     }).catch(err => {
         response.error(res, err);
