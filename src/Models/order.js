@@ -25,26 +25,6 @@ exports.getOrders = (req, page) => {
     });
 }
 
-// exports.getOrderById = req => {
-//     return new Promise((resolve, reject) => {
-//         conn.query('SELECT admin_id, order_id, total_price, status, cancel_reason FROM tb_orders WHERE order_id = ?',
-//          [req.params.order_id], (err, result) => {
-//             if(!err) resolve(result);
-//             else reject(err);
-//         });
-//     });
-// }
-
-// exports.getDetailOrderById = req => {
-//     return new Promise((resolve, reject) => {
-//         conn.query('SELECT prod_id, quantity, sub_total FROM tb_orders_detail WHERE order_id = ?',
-//          [req.params.order_id], (err, result) => {
-//              if(!err) resolve(result);
-//              else reject(err);
-//         });
-//     });
-// }
-
 exports.newOrder = (req, order) => {
     return new Promise((resolve, reject) => {
         conn.query('INSERT INTO tb_orders SET admin_id = ?, order_id = ?, total_price = ?',

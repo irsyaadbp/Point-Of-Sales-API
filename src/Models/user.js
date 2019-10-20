@@ -84,3 +84,12 @@ exports.getUserByName = req => {
         });
     });
 }
+
+exports.deleteUser = req => {
+    return new Promise((resolve, reject) => {
+        conn.query('DELETE FROM tb_users WHERE id = ?', [req.params.user_id], (err, result) => {
+            if(!err) resolve(result);
+            else reject(err);
+        });
+    });
+}
