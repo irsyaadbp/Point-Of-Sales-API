@@ -23,7 +23,7 @@ exports.getCategoryById = (req, res) => {
 }
 
 exports.newCategory = (req, res) => {
-    if(req.body.category_name == null) return response.error(res, "category name can't be empty");
+    if(req.body.category_name == null || req.body.category_name == "") return response.error(res, "category name can't be empty");
 
     model.newCategory(req).then(result =>{
         response.success(res, "Category added successfully");
@@ -33,7 +33,8 @@ exports.newCategory = (req, res) => {
 }
 
 exports.updateCategory = (req, res) => {
-    if(req.body.category_name == null) return response.error(res, "category name can't be empty");
+    if(req.body.category_name == null || req.body.category_name == "") return response.error(res, "category name can't be empty");
+    if(req.params.category_id == "1") return response.error(res, "I'm Sorry you cannot edit Uncategorized category");
 
     model.getCategoryById(req).then(data => {
         if(data.length != 0){
@@ -51,6 +52,7 @@ exports.updateCategory = (req, res) => {
 }
 
 exports.deleteCategory = (req, res) => {
+    if(req.params.category_id == "1") return response.error(res, "I'm Sorry you cannot deleted Uncategorized category");
     model.getCategoryById(req).then(data => {
         if(data.length != 0){
             model.deleteCategory(req).then(result => {

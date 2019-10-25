@@ -24,12 +24,12 @@ exports.getProductById = (req, res) => {
 }
 
 exports.newProduct = (req, res) => {
-    if(req.body.prod_name == null) return response.error(res, "Product name can't be empty");
-    if(req.body.prod_desc == null) return response.error(res, "Product description can't be empty");
-    if(req.body.prod_image == null) return response.error(res, "Product image can't be empty");
-    if(req.body.category_id == null) req.body.category_id = 1;
-    if(req.body.price == null) return response.error(res, "Price can't be empty");
-    if(req.body.quantity == null) return response.error(res, "Quantity can't be empty");
+    if(req.body.prod_name == null || req.body.prod_name == "") return response.error(res, "Product name can't be empty");
+    if(req.body.prod_desc == null || req.body.prod_desc == "") return response.error(res, "Product description can't be empty");
+    if(req.body.prod_image == null || req.body.prod_image == "") return response.error(res, "Product image can't be empty");
+    if(req.body.category_id == null || req.body.category_id == "") req.body.category_id = 1;
+    if(req.body.price == null || req.body.price == "") return response.error(res, "Price can't be empty");
+    if(req.body.quantity == null || req.body.quantity == "") return response.error(res, "Quantity can't be empty");
 
     getCategoryById(req).then(result => {
         if (result.length != 0) {
@@ -53,12 +53,12 @@ exports.newProduct = (req, res) => {
 }
 
 exports.updateProduct = (req, res) => {
-    if(req.body.prod_name == null) return response.error(res, "Product name can't be empty");
-    if(req.body.prod_desc == null) return response.error(res, "Product description can't be empty");
-    if(req.body.prod_image == null) return response.error(res, "Product image can't be empty");
-    if(req.body.category_id == null) return response.error(res, "Category id can't be empty");
-    if(req.body.price == null) return response.error(res, "Price can't be empty");
-    if(req.body.quantity == null) return response.error(res, "Quantity can't be empty");
+    if(req.body.prod_name == null || req.body.prod_name == "") return response.error(res, "Product name can't be empty");
+    if(req.body.prod_desc == null || req.body.prod_desc == "") return response.error(res, "Product description can't be empty");
+    if(req.body.prod_image == null || req.body.prod_image == "") return response.error(res, "Product image can't be empty");
+    if(req.body.category_id == null || req.body.category_id == "") req.body.category_id = 1;
+    if(req.body.price == null || req.body.price == "") return response.error(res, "Price can't be empty");
+    if(req.body.quantity == null || req.body.quantity == "") return response.error(res, "Quantity can't be empty");
     
     model.getProductById(req).then(result => {
         if (result.length != 0) {
