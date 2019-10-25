@@ -10,9 +10,9 @@ const model = require('../Models/user'),
     } = require('../Models/page');
 
 exports.registerUser = (req, res) => {
-    if (req.body.username == null) return response.error(res, "Username can't be empty");
-    if (req.body.password == null) return response.error(res, "Password can't be empty");
-    if (req.body.user_role == null) return response.error(res, "User role can't be empty");
+    if (req.body.username === null || req.body.username === "") return response.error(res, "Username can't be empty");
+    if (req.body.password === null || req.body.password === "") return response.error(res, "Password can't be empty");
+    if (req.body.user_role === null|| req.body.user_role === "") return response.error(res, "User role can't be empty");
 
     if(!isUsernameValid(req.body.username)) return response.error(res, "username cannot contain special character except underscore ( _ ) and minimal 6 digits");
     if (!isPasswordValid(req.body.password)) return response.error(res, "Password must have lower case, upper case, number, and minimal 8 digits");
@@ -38,8 +38,8 @@ const isUsernameValid = username => {
 };
 
 exports.loginUser = (req, res) => {
-    if (req.body.username == null) return response.error(res, "Username can't be empty");
-    if (req.body.password == null) return response.error(res, "Password can't be empty");
+    if (req.body.username == null || req.body.username === "") return response.error(res, "Username can't be empty");
+    if (req.body.password == null || req.body.password === "") return response.error(res, "Password can't be empty");
 
     model.loginUser(req).then(result => {
         if (result.length != 0) {

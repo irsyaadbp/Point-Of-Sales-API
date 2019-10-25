@@ -14,10 +14,10 @@ exports.getOrders = (req, page) => {
                 maxPage: maxPage.maxPage
             };
 
-            conn.query(`${sql} LIMIT ? OFFSET ?`, [page.limit, page.offset], (err, result) => {
+            conn.query(`${sql} LIMIT ? OFFSET ?`, [page.limit, page.offset], (err, data) => {
                 if (!err) resolve({
                     infoPage,
-                    result
+                    data
                 });
                 else reject(err);
             });

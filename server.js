@@ -13,11 +13,12 @@ const server = express(),
     port = process.env.PORT || 3000,
     nodeEnv = 'Development';
 
+server.use(cors());
+
 server.listen(port, () => {
     console.log(`Server is running with port ${port} in ${nodeEnv}`);
 });
 
-server.use(cors());
 server.use(logger('dev'));
 server.use(bodyParser.json());
 server.use(bodyParser.urlencoded({

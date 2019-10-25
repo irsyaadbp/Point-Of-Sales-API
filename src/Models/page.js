@@ -3,7 +3,7 @@
 const conn = require('../Configs/conn');
 
 exports.pagination = req => {
-    const limit = Number(req.query.perpage) || 10;
+    const limit = Number(req.query.perpage) || 12;
     const page = Number(req.query.page) || 1;
     const offset = limit * (page - 1);
 
