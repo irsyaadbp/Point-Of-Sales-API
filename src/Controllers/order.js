@@ -47,8 +47,7 @@ exports.newOrder = (req, res) => {
         } else {
             response.error(res, "Product id not found")
         }
-    });
-
+    }).catch(err => response.error(res, err));
 }
 
 exports.getDetailOrderById = (req, res) => {
