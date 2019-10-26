@@ -21,7 +21,7 @@ exports.getOrders = (req, page) => {
                 });
                 else reject(err);
             });
-        });
+        }).catch(err => reject(err));
     });
 }
 
