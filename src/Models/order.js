@@ -25,7 +25,7 @@ exports.getOrders = (req, page) => {
     });
 }
 
-exports.newOrder = (req, order) => {
+exports.newOrder = async (req, order) => {
     return new Promise((resolve, reject) => {
         conn.query('INSERT INTO tb_orders SET admin_id = ?, order_id = ?, total_price = ?',
             [req.body.admin_id, order, req.body.total_price],
@@ -58,10 +58,12 @@ exports.updateStatusOrder = req => {
 exports.updateQtyProduct = (product, status) => {
     let sql = '';
     const operator = status == 'success' ? '-' : '+';
+    console.log(product);
     
     product.forEach((item, index) => {
         sql += `UPDATE tb_products SET quantity = quantity ${operator} ${item.quantity} WHERE id = ${item.prod_id};`;
     });
+
     return new Promise((resolve, reject) => {
         conn.query(sql, product, (err, result) => {
             if (!err) resolve(result);
@@ -71,8 +73,17 @@ exports.updateQtyProduct = (product, status) => {
 
 }
 
-exports.getOrderById = req => {
-    const orderId = req.params.order_id || req.body.order_id;
+exports.reduceQtyProduct = (product) => {
+    return new Promise((resolve, reject) => {
+        conn.query(`UPDATE tb_products SET quantity = quantity - ? WHERE id = ?`, [product.quantity, product.prod_id], (err, result) => {
+            if(!err) resolve(result);
+            else reject(err);
+        })
+    })
+}
+
+exports.getOrderById = (req, order) => {
+    const orderId = req.params.order_id || req.body.order_id || order;
     return new Promise((resolve, reject) => {
         conn.query(`SELECT * FROM tb_orders WHERE order_id = ?`, [orderId],
             (err, result) => {

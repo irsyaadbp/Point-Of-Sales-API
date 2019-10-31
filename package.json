@@ -4,7 +4,8 @@
   "description": "Point of Sales API",
   "main": "server.js",
   "scripts": {
-    "start": "node server"
+    "start": "node server",
+    "test": "nodemon server"
   },
   "author": "Irsyaad Budi Prasetianto",
   "license": "ISC",
