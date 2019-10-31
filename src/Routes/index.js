@@ -20,8 +20,10 @@ Router.get('/', (req, res) => {
 
 
 Router.use('/product', validateUser, product);
+// Router.use('/category', category);
 Router.use('/category', validateUser, category);
-Router.use('/order', validateUser, order);
+Router.use('/order', order);
+// Router.use('/order', validateUser, order);
 Router.use('/user', user);
 
 

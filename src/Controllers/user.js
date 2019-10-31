@@ -11,11 +11,11 @@ const model = require('../Models/user'),
 
 exports.registerUser = (req, res) => {
     if (req.body.username === null || req.body.username === "") return response.error(res, "Username can't be empty");
+    if(!isUsernameValid(req.body.username)) return response.error(res, "username cannot contain special character except underscore ( _ ) and minimal 6 digits");
     if (req.body.password === null || req.body.password === "") return response.error(res, "Password can't be empty");
+    if (!isPasswordValid(req.body.password)) return response.error(res, "Password must have lower case, upper case, number, and minimal 8 digits");
     if (req.body.user_role === null|| req.body.user_role === "") return response.error(res, "User role can't be empty");
 
-    if(!isUsernameValid(req.body.username)) return response.error(res, "username cannot contain special character except underscore ( _ ) and minimal 6 digits");
-    if (!isPasswordValid(req.body.password)) return response.error(res, "Password must have lower case, upper case, number, and minimal 8 digits");
 
     model.getUserByName(req).then(result => {
         if (result.length != 0) response.error(res, "Username has been taken, please change your username");
@@ -39,7 +39,9 @@ const isUsernameValid = username => {
 
 exports.loginUser = (req, res) => {
     if (req.body.username == null || req.body.username === "") return response.error(res, "Username can't be empty");
+    if(!isUsernameValid(req.body.username)) return response.error(res, "username cannot contain special character except underscore ( _ ) and minimal 6 digits");
     if (req.body.password == null || req.body.password === "") return response.error(res, "Password can't be empty");
+    if (!isPasswordValid(req.body.password)) return response.error(res, "Password must have lower case, upper case, number, and minimal 8 digits");
 
     model.loginUser(req).then(result => {
         if (result.length != 0) {

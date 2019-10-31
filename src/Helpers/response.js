@@ -15,5 +15,5 @@ exports.error = (res, message) =>{
         message
     };
 
-    res.json(form);
+    res.status(400).json(form);
 }
