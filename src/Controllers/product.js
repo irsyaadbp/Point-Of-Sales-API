@@ -54,7 +54,6 @@ exports.newProduct = (req, res) => {
         return response.error(res, "Product already exists");
       getCategoryById(req)
         .then(resultCategory => {
-          console.log(resultCategory, "category");
           if (resultCategory.length == 0)
             return response.error(res, "Category Id Not Found");
           model
