@@ -1,6 +1,6 @@
 {
   "name": "point-of-sales-api",
-  "version": "1.0.1",
+  "version": "1.0.0",
   "description": "Point of Sales API",
   "main": "server.js",
   "scripts": {
