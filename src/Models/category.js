@@ -29,9 +29,9 @@ exports.getCategories = (req, page) => {
   });
 };
 
-exports.getCategoryById = req => {
+exports.getCategoryById = (req, id) => {
   return new Promise((resolve, reject) => {
-    const categoryId = req.params.category_id || req.body.category_id;
+    const categoryId = req.params.category_id || req.body.category_id || id;
 
     conn.query(
       "SELECT * FROM tb_categories WHERE id = ?",

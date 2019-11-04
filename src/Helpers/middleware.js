@@ -3,8 +3,9 @@ const response = require('../Helpers/response'),
     secretKey = process.env.SECRET_KEY || '270400';
 
 exports.validateUser = (req, res, next) => {
-    const token = req.headers['authorization'].replace('Bearer ', '');
+    let token = req.headers['authorization'];
     if(!token) return res.status(401).json({status:401, message: "Unauthorized"});
+    token = token.replace('Bearer ', '');
     jwt.verify(token, secretKey, (err, decoded) => {
         if (err) {
             response.error(res, "Invalid token");

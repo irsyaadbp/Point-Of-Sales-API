@@ -99,7 +99,7 @@ exports.updateProduct = (req, res) => {
         .then(resultName => {
           if (
             resultName.length !== 0 &&
-            resultName[0].id !== req.params.prod_id
+            resultName[0].id !==  Number(req.params.prod_id)
           )
             return response.error(res, "Product name already exist");
           getCategoryById(req)
@@ -129,13 +129,13 @@ exports.deleteProduct = (req, res) => {
       model
         .deleteProduct(req)
         .then(result => {
-          response.success(res, "Product deleted successfully");
+          response.success(res, {message: "Product deleted successfully", id: req.params.prod_id});
         })
         .catch(err => {
           response.error(res, err);
         });
     } else {
-      response.error(res, "Product Id Not Found");
+      response.error(res, {message: "Product Id Not Found", id: req.params.prod_id});
     }
   });
 };

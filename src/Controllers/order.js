@@ -18,6 +18,7 @@ exports.getOrders = (req, res) => {
 };
 
 exports.newOrder = async (req, res) => {
+  console.log(req.body, "uye");
   if (req.body.admin_id == null)
     return response.error(res, "Admin id can't be empty");
   if (req.body.total_price == null)
@@ -30,41 +31,39 @@ exports.newOrder = async (req, res) => {
   const detailOrder = req.body.detail_order;
   const orderProdId = detailOrder.map(item => item.prod_id);
 
-    getProductById(req, orderProdId)
-      .then(resultProduct => {
-        if (resultProduct.length == orderProdId.length) {
-          let statusQty = [];
-          resultProduct.forEach((item, index) => {
-            if (detailOrder[index].quantity < item.quantity) {
-              statusQty.push(true);
-            } else {
-              statusQty.push(false);
-            }
-          });
-          if (!statusQty.includes(false)) {
-            model
-              .newOrder(req, orderGenerator())
-              .then(resultOrder => {
-                  let status = [];
-                  detailOrder.forEach(async item => {
-                      await model.reduceQtyProduct(detailOrder).then(result => status.push(true)).catch(err => status.push(false))  
-                  });
+  for (order in detailOrder) {
+    const product = await getProductById(req, detailOrder[order].prod_id);s
+    if (product.length === 0)
+      return response.error(
+        res,
+        `Product id ${detailOrder[order].prod_id} not found`
+      );
+    if (product[0].quantity < detailOrder[order].quantity)
+      return response.error(
+        res,
+        `Quantity product id ${detailOrder[order].prod_id} not enough`
+      );
+  }
 
-                  if(status.includes(false)) return response.error(res, "Failed to create new order");
-                  else response.success(res, "Success create new order")
-              })
-              .catch(err => {
-                if (err.code == "ER_DUP_ENTRY") this.newOrder(req, res);
-                else response.error(res, err.code);
-              });
-          } else {
-            response.error(res, "Quantity is not enough");
-          }
-        } else {
-          response.error(res, "Product id not found");
-        }
-      })
-      .catch(err => response.error(res, err));
+  model
+    .newOrder(req, orderGenerator())
+    .then(resultOrder => {
+      let status = [];
+      detailOrder.forEach(async item => {
+        await model
+          .reduceQtyProduct(detailOrder)
+          .then(result => status.push(true))
+          .catch(err => status.push(false));
+      });
+
+      if (status.includes(false))
+        return response.error(res, "Failed to create new order");
+      else response.success(res, "Success create new order");
+    })
+    .catch(err => {
+      if (err.code == "ER_DUP_ENTRY") this.newOrder(req, res);
+      else response.error(res, err.code);
+    });
 };
 
 exports.getDetailOrderById = (req, res) => {

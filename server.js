@@ -10,7 +10,7 @@ const express = require('express'),
 const Router = require('./src/Routes/index');
 
 const server = express(),
-    port = process.env.PORT || 3000,
+    port = process.env.PORT || 5000,
     nodeEnv = 'Development';
 
 server.use(cors());
