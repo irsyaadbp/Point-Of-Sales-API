@@ -42,14 +42,6 @@ CREATE TABLE `tb_categories` (
 INSERT INTO `tb_categories` (`id`, `name`, `created_at`, `updated_at`) VALUES
 (1, 'Uncategorized', '2019-10-18 16:13:29', NULL);
 
---
--- Triggers `tb_categories`
---
-DELIMITER $$
-CREATE TRIGGER `Change Category Product to Uncategorized` AFTER DELETE ON `tb_categories` FOR EACH ROW UPDATE tb_products AS product SET product.category = 1 WHERE product.category = OLD.id
-$$
-DELIMITER ;
-
 -- --------------------------------------------------------
 
 --
@@ -81,13 +73,6 @@ CREATE TABLE `tb_orders_detail` (
   `sub_total` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
---
--- Triggers `tb_orders_detail`
---
-DELIMITER $$
-CREATE TRIGGER `Add Quantity Product` AFTER INSERT ON `tb_orders_detail` FOR EACH ROW UPDATE tb_products AS product SET product.quantity = product.quantity - NEW.quantity WHERE NEW.prod_id = product.id
-$$
-DELIMITER ;
 
 -- --------------------------------------------------------
 
@@ -106,6 +91,23 @@ CREATE TABLE `tb_products` (
   `created_at` timestamp NOT NULL DEFAULT current_timestamp(),
   `updated_at` timestamp NULL DEFAULT NULL ON UPDATE current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+
+-- ---------------------------------------------------------
+
+--
+-- Table structure for table `tb_users`
+--
+
+CREATE TABLE `tb_users` (
+  `id` int(11) NOT NULL,
+  `username` varchar(255) NOT NULL,
+  `password` varchar(255) NOT NULL,
+  `role` varchar(255) NOT NULL,
+  `created_at` timestamp NOT NULL DEFAULT current_timestamp(),
+  `updated_at` timestamp NULL DEFAULT NULL ON UPDATE current_timestamp()
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
 
 --
 -- Indexes for dumped tables
@@ -163,6 +165,23 @@ ALTER TABLE `tb_orders_detail`
 --
 ALTER TABLE `tb_products`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+COMMIT;
+
+--
+-- Indexes for table `tb_users`
+--
+ALTER TABLE `tb_users`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- AUTO_INCREMENT for dumped tables
+--
+
+--
+-- AUTO_INCREMENT for table `tb_users`
+--
+ALTER TABLE `tb_users`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
