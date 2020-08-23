@@ -2,15 +2,15 @@
 
 # Overview
 
-
 ## List of Contents
-* [Introduction](#introduction)
-    * [Built With](#built-with)
-* [Getting Started](#getting-started)
-  * [Requirements](#requirements)
-  * [Installation](#installation)   
-* [Endpoints](#endpoints)
-* [Support](#support)
+
+- [Introduction](#introduction)
+  - [Built With](#built-with)
+- [Getting Started](#getting-started)
+  - [Requirements](#requirements)
+  - [Installation](#installation)
+- [Endpoints](#endpoints)
+- [Support](#support)
 
 ## Introduction
 
@@ -28,59 +28,6 @@ Point of Sales API is an API that helps users to run their trading business. The
 2. <a href="https://www.npmjs.com/">NPM</a>
 3. <a href="https://www.getpostman.com/">Postman</a>
 
-![node.js](https://www.javatpoint.com/js/nodejs/images/node-js-tutorial.png)
-
-#### Node.js
-Node.js is an open-source, cross-platform JavaScript run-time environment that executes JavaScript code outside of a browser.
-
-Nodejs allow developers to use javascript to write command line tools and for **server side scripting**. Hence, Nodejs represent what we know about "Javascript Everywhere" Paradigm, which allow us to us javascript on both **client-side** and **server-side**. Nodejs use **V8** Javascript Engine, the same engine for Chrome and Chromium based browser used.
-
-Nodejs was written in 2009 by Ryan Dahl, 13 years after the introduction of first server-side javascript environment which is **Netscape's LiveWire Pro Web**. Dahl write Nodejs based on his critic on the performance limitation of the most popular web server in 2009, Apache HTTP Server.
-
-The initial release of Nodejs in 2009 supported only Linux and Mac OS X. Later in July 2011, the first Nodejs build supporting Windows was released.
-
-![express](https://expressjs.com/images/express-facebook-share.png)
-
-#### Express.js
-Express.js, or simply Express, is a web application framework for Node.js, released as free and open-source software under the MIT License. It is designed for building web applications and APIs. It has been called the de facto standard server framework for Node.js.
-
-The philosophy of Expressjs is to provide a small and robust tooling for HTTP servers. Making it a great solution for single page apps, website, hybrids, or public HTTP APIs. 
-
-![restful api](https://s3.amazonaws.com/kinlane-productions/salesforce/salesforce-rest-api.png)
-
-#### RESTFul API
-A RESTful API is an application program interface (API) that uses HTTP requests to GET, PUT, POST and DELETE data.
-
-A RESTful API -- also referred to as a RESTful web service -- is based on representational state transfer (REST) technology, an architectural style and approach to communications often used in web services development.
-
-Representational State Transfer is a software architectural style that defines a set of constraints to be used for creating Web services. Web services that conform to the REST architectural style, called RESTful Web services, provide interoperability between computer systems on the Internet.
-
-RESTful API design was defined by Dr. Roy Fielding in his 2000 doctorate dissertation. In order to be a true RESTful API, a web service must adhere to the following six REST architectural constraints:
-
-* Use of a uniform interface (UI). Resources should be uniquely identifiable through a single URL, and only by using the underlying methods of the network protocol, such as DELETE, PUT and GET with HTTP, should it be possible to manipulate a resource.
-* Client-server based. There should be a clear delineation between the client and server. UI and request-gathering concerns are the client’s domain. Data access, workload management and security are the server’s domain. This loose coupling of the client and server enables each to be developed and enhanced independent of the other.
-* Stateless operations. All client-server operations should be stateless, and any state management that is required should take place on the client, not the server.
-* RESTful resource caching. All resources should allow caching unless explicitly indicated that caching is not possible.
-* Layered system. REST allows for an architecture composed of multiple layers of servers.
-* Code on demand. Most of the time a server will send back static representations of resources in the form of XML or JSON. However, when necessary, servers can send executable code to the client.
-
-#### HTTP Requests
-All API requests are made by sending a secure HTTPS request using one of the following methods, depending on the action being taken:
-
-- `GET` Get a resource or list of resources
-- `POST` Create a resource
-- `PUT/PATCH` Update a resource
-- `DELETE` Delete a resource
-
-#### HTTP Response Codes
-
-Each response will be returned with one of the following HTTP status codes:
-
-| Code  | Status               | Description                                                                         |
-| :---- | :------------------- | :---------------------------------------------------------------------------------- |
-| `200` | `OK`                 | The request was successful                                                          |
-| `400` | `Bad Request`        | There was a problem with the request (security, malformed, data validation, etc.)   |
-
 ### Installation
 
 1. Clone or download this repository
@@ -89,11 +36,12 @@ Each response will be returned with one of the following HTTP status codes:
 4. Make a new file, **.env** and setup the file. [instruction here](#setup-env-file)
 5. Turn on Web Server and MySQL, (Also can be done with third-party tools like XAMPP, WAMP, etc)
 6. Setup the database. [instruction here](#setup-database)
-7. Open **Postman** desktop application or Chrome web extension (Install **Postman** if you haven't yet)
-8. Choose HTTP Method and enter the request URL.(i.e. localhost:3000/product)
+7. Open **Postman** desktop application or Chrome web extension (Install **Postman** if you haven't yet) or you can use **Insomnia**
+8. Choose HTTP Method and enter the request URL.(i.e. localhost:5000/product)
 9. Check all **Endpoints** [here](#endpoints)
 
 ## Setup .env file
+
 Duplicate **.env.example** file to **.env** on code editor and change the variable or copy the code below :
 
 ```
@@ -101,11 +49,12 @@ DB_HOST = 'localhost'
 DB_USER = 'username'
 DB_PASSWORD = 'password'
 DB_DATABASE = 'database'
-PORT = 3000
-SECRET_KEY = '270400'
+PORT = 5000
+SECRET_KEY = 'JFDFHSKFJHSKFHSDFKSDFJKSDF'
 ```
 
 ## Setup Database
+
 You can import file **`database.sql`** to **phpmyadmin**.
 
 ## Endpoints
@@ -120,17 +69,18 @@ You can import file **`database.sql`** to **phpmyadmin**.
 - **Request** : **`GET /`**
 - **Response** :
 
-    ```
-    {
-        "message": "Welcome to Point Of Sales RESTful API, You can read the documentation at README.md",
-        "author": "Irsyaad Budi Prasetianto",
-        "email": "irsyaad.budip@gmail.com",
-        "github": "github.com/irsyaadbp"
-    }
-    ```
+  ```
+  {
+      "message": "Welcome to Point Of Sales RESTful API, You can read the documentation at README.md",
+      "author": "Irsyaad Budi Prasetianto",
+      "email": "irsyaad.budip@gmail.com",
+      "github": "github.com/irsyaadbp"
+  }
+  ```
 
 #### **User**
-* **Register user**
+
+- **Register user**
   - **Request** : **`POST /user/register`**
     ```
     {
@@ -139,14 +89,14 @@ You can import file **`database.sql`** to **phpmyadmin**.
         "user_role": "administrator"
     }
     ```
-  - **Response** : 
+  - **Response** :
     ```
     {
         "status": 200,
         "result": "User created successfully"
     }
     ```
-* **Login User**
+- **Login User**
   - **Request** : **`POST /user/login`**
     ```
     {
@@ -154,7 +104,7 @@ You can import file **`database.sql`** to **phpmyadmin**.
         "password": "12345678"
     }
     ```
-  - **Response** : 
+  - **Response** :
     ```
     {
         "status": 200,
@@ -165,9 +115,9 @@ You can import file **`database.sql`** to **phpmyadmin**.
         }
     }
     ```
-* **Get User By Id**
-  - **Request**:  **`PUT /user/:user_id`**
-  - **Response**: 
+- **Get User By Id**
+  - **Request**: **`PUT /user/:user_id`**
+  - **Response**:
     ```
     {
         "status": 200,
@@ -182,8 +132,8 @@ You can import file **`database.sql`** to **phpmyadmin**.
         ]
     }
     ```
-* **Update User By Id**
-  - **Request**:  **`PUT /user/:user_id`**
+- **Update User By Id**
+  - **Request**: **`PUT /user/:user_id`**
     ```
     {
         "username": "irsyaad101",
@@ -191,16 +141,16 @@ You can import file **`database.sql`** to **phpmyadmin**.
         "user_role": "Manager"
     }
     ```
-  - **Response**: 
+  - **Response**:
     ```
     {
         "status": 200,
         "result": "Updated user successfully"
     }
     ```
-* **Delete User By Id**
-  - **Request**:  **`DELETE /user/:user_id`**
-  - **Response**: 
+- **Delete User By Id**
+  - **Request**: **`DELETE /user/:user_id`**
+  - **Response**:
     ```
     {
         "status": 200,
@@ -208,11 +158,13 @@ You can import file **`database.sql`** to **phpmyadmin**.
     }
     ```
 
-
 #### **CRUD Product Endpoint**
-* **Get All Product**
+
+- **Get All Product**
+
   - **Request** : **`GET /product`**
   - **More Options** :
+
     - **Search** : add params **`?search=`**
     - **Sort By** : add params **`?sortby=name/category/updated` and `?orderby=asc/desc`**
     - **Pagination**: add params **`?page=`** to get page of product and **`?perpage=`** to show the max product in one page, if not add the params, default value for **page** is **1** and **perpage** is **10**
@@ -343,7 +295,7 @@ You can import file **`database.sql`** to **phpmyadmin**.
     }
     ```
 
-* **Get Product By Id**
+- **Get Product By Id**
   - **Request** : **`GET /product/:prod_id`**
   - **Response** :
     ```
@@ -364,7 +316,7 @@ You can import file **`database.sql`** to **phpmyadmin**.
         ]
     }
     ```
-* **Create a Product**
+- **Create a Product**
   - **Request** : **POST /product**
     ```
     {
@@ -384,7 +336,7 @@ You can import file **`database.sql`** to **phpmyadmin**.
         "result": "Product added sucessfully"
     }
     ```
-* **Update a Product**
+- **Update a Product**
   - **Request** : **`PUT /product/:prod_id`**
     ```
     {
@@ -403,9 +355,9 @@ You can import file **`database.sql`** to **phpmyadmin**.
         "result": "Product updated sucessfully"
     }
     ```
-* **Delete a Product** 
+- **Delete a Product**
   - **Request** : **`DELETE /prod_id/:prod_id`**
-  - **Response** : 
+  - **Response** :
     ```
     {
         "status": 200,
@@ -414,9 +366,10 @@ You can import file **`database.sql`** to **phpmyadmin**.
     ```
 
 #### CRUD Category Endpoint
-* **Read All Category**
+
+- **Read All Category**
   - **Request** : **`GET /category`**
-  - **More Options** : 
+  - **More Options** :
     - **Pagination** : add params **`?page=`** to get page of product and **`?perpage=`** to show the max product in one page, if not add the params default value for **page** is **1** and **perpage** is **10**
   - **Response** :
     ```
@@ -451,7 +404,7 @@ You can import file **`database.sql`** to **phpmyadmin**.
         }
     }
     ```
-* **Create a Category**
+- **Create a Category**
   - **Request** : **`POST /category`**
     ```
     {
@@ -465,7 +418,7 @@ You can import file **`database.sql`** to **phpmyadmin**.
         "result": "Category added successfully"
     }
     ```
-* **Update a Category**
+- **Update a Category**
   - **Request** : **`PUT /category/:category_id`**
     ```
     {
@@ -479,7 +432,7 @@ You can import file **`database.sql`** to **phpmyadmin**.
         "result": "Category updated successfully"
     }
     ```
-* **Delete a Category**
+- **Delete a Category**
   - **Request** : **`DELETE /category/:category_id`**
   - **Response** :
     ```
@@ -491,9 +444,10 @@ You can import file **`database.sql`** to **phpmyadmin**.
 
 #### Transaction Order Endpoint
 
-* **Get All Order**
+- **Get All Order**
+
   - **Request** : **`GET /order`**
-  - **More Options** : 
+  - **More Options** :
     - **Pagination** : add params **`?page=`** to get page of product and **`?perpage=`** to show the max product in one page, if not add the params default value for **page** is **1** and **perpage** is **10**
   - **Response** :
     ```
@@ -541,9 +495,9 @@ You can import file **`database.sql`** to **phpmyadmin**.
     }
     ```
 
-* **Create New Order**
+- **Create New Order**
   <br/>
-    **IMPORTANT!** When create order, quantity of product is automatically reduce, because we use **trigger** in **mysql**
+  **IMPORTANT!** When create order, quantity of product is automatically reduce, because we use **trigger** in **mysql**
   - **Request** : **`POST /order`**
     ```
     {
@@ -555,14 +509,14 @@ You can import file **`database.sql`** to **phpmyadmin**.
         ]
     }
     ```
-  - **Response** : 
+  - **Response** :
     ```
     {
         "status": 200,
         "result": "Order added successfully"
     }
     ```
-* **Update Status Order**
+- **Update Status Order**
   - **Request** : **`PUT /order/:order_id`**
     <br/>
     value of **status** only **success** or **cancel**
@@ -572,7 +526,7 @@ You can import file **`database.sql`** to **phpmyadmin**.
         "cancel_reason": "product defective production"
     }
     ```
-  - **Response** : 
+  - **Response** :
     ```
     {
         "status": 200,
@@ -580,7 +534,6 @@ You can import file **`database.sql`** to **phpmyadmin**.
     }
     ```
 
-
 ### Support
 
-For API support, please email irsyaad.budip@gmail.com
+For API support, please email irsyaadbp01@gmail.com
